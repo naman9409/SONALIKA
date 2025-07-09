@@ -1,114 +1,52 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Tests</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
-
-    body {
-      background-color: #f0f2f5;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .top-navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #2c3e50;
-      padding: 15px 30px;
-      color: white;
-    }
-
-    .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
-
-    .nav-links li a {
-      color: white;
-      text-decoration: none;
-      font-size: 1rem;
-    }
-
-    .nav-links li a:hover {
-      text-decoration: underline;
-    }
-
-    .page-container {
-      padding: 30px;
-    }
-
-    .section {
-      background: white;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    h2 {
-      color: #2c3e50;
-      margin-bottom: 20px;
-    }
-
-    input, select, button {
-      padding: 10px;
-      margin-top: 10px;
-      width: 100%;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      font-size: 1rem;
-    }
-
-    button {
-      background-color: #3498db;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #2980b9;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <nav class="top-navbar">
-    <div class="logo">Coaching Institutes</div>
+    <div class="logo">Coaching Management</div>
     <ul class="nav-links">
       <li><a href="dashboard.html">Dashboard</a></li>
       <li><a href="batch.html">Batch</a></li>
       <li><a href="students.html">Students</a></li>
-      <li><a href="test.html">Test</a></li>
-      <li><a href="material.html">Materials</a></li>
+      <li><a href="test.html">Tests</a></li>
+      <li><a href="fees.html">Fees</a></li>
+      <li><a href="#">Logout</a></li>
     </ul>
   </nav>
   <div class="page-container">
     <div class="section">
-      <h2>Test Management</h2>
+      <h2>Add New Test</h2>
       <form>
-        <input type="text" placeholder="Test Title">
-        <input type="date">
-        <select>
-          <option>Batch A</option>
-          <option>Batch B</option>
+        <input type="text" placeholder="Test Title" required>
+        <input type="date" required>
+        <select required>
+          <option disabled selected>Select Batch</option>
+          <option>Morning</option>
+          <option>Evening</option>
         </select>
+        <input type="number" placeholder="Max Marks" required>
         <button type="submit">Add Test</button>
       </form>
+    </div>
+
+    <div class="section">
+      <h2>Available Tests</h2>
+      <div class="test-card">
+        <h3>Maths</h3>
+        <p><strong>Batch:</strong> Morning</p>
+        <p><strong>Date:</strong> July 25, 2025</p>
+        <p><strong>Max Marks:</strong> 100</p>
+        <div class="actions">
+          <button class="edit-btn">Edit</button>
+          <button class="delete-btn">Delete</button>
+        </div>
+      </div>
     </div>
   </div>
 </body>
